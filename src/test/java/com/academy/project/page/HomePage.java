@@ -1,33 +1,32 @@
 package com.academy.project.page;
 
-import com.academy.framework.page.BasePage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
-public class HomePage extends BasePage {
-    @FindBy(css = "input[name='q']")
-    private WebElement searchField;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 
-    @FindBy(css ="input[value~='Google']")
-    private WebElement searchButton;
+public class HomePage {
 
-    public static  HomePage startFromHome(WebDriver driver, String baseUrl) {
-        driver.get(baseUrl);
-        return new HomePage(driver);
+
+    private static String subscribersLink="div>a";
+
+    @FindBy(xpath = "//td")
+    private SelenideElement newSubcr;
+
+
+    public static SubscribersPage goToSubscribers(){
+        $(byCssSelector(subscribersLink)).click();
+        return page(SubscribersPage.class);
     }
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public void checkTheUserAfretAdding(String expectedName){
+        $(byXpath("//*[contains(text(), "+expectedName+")]"));
     }
 
-    public HomePage inputSearch(String text) {
-        inputTextField(searchField, text);
-        return this;
-    }
 
-    public HomePage clickSearch() {
-        searchButton.click();
-        return this;
-    }
 }
