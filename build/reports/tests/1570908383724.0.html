@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"><head>
+    <title>Creation of Subscriber</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/lib/bootstrap-4.0.0/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/lib/bootstrap-4.0.0/bootstrap.min.js"></script>
+    <script src="/js/lib/jquery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Заполните все поля для создания абонента</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-link" href="/">Home</a>
+        </div>
+    </div>
+
+    <form action="/subscriber/add" method="post">
+        <div class="row">
+            <div class="col">
+                <table class="table table-borderless">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <label>Имя:</label>
+                        </td>
+                        <td>
+                            <input id="fname" type="text" name="firstName" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Фамилия:</label>
+                        </td>
+                        <td>
+                            <input id="lname" type="text" name="lastName" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Пол:</label>
+                        </td>
+                        <td>
+                            <span>
+                                <input type="radio" id="MALE" name="gender" value="MALE" checked="checked">
+                                <label for="MALE">м</label>
+                            </span><span>
+                                <input type="radio" id="FEMALE" name="gender" value="FEMALE">
+                                <label for="FEMALE">ж</label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Возраст:</label>
+                        </td>
+                        <td>
+                            <input id="age" type="text" name="age" value="0" pattern="[0-9.]+">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <button type="submit" class="btn btn-success">Создать</button>
+    </form>
+</div>
+
+</body></html>

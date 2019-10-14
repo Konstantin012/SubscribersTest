@@ -21,8 +21,6 @@ public class RestTest {
 
     @BeforeClass
     public void setUp() throws Exception{
-
-
         String subscriberData = System.getProperty("subscriber");
         if (subscriberData==null)
             subscriberData = DEFAULT_PATH;

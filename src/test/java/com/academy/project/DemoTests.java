@@ -1,10 +1,6 @@
 package com.academy.project;
 
-import com.academy.framework.test.BaseTest;
 import com.academy.project.subscribers.Subscriber;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,13 +16,18 @@ import static com.codeborne.selenide.Selenide.open;
 public class DemoTests {
 
 
-//    private static final Logger LOG =  LogManager.getLogger(DemoTests.class);
     private Properties subscriberProperty;
     private String homeUrl;
+    private static final String DEFAULT_PATH = "src/main/resources/subscriber.properties";
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+//        .screenshots(true)
+//        .savePageSource(false));
         String subscriberData = System.getProperty("subscriber");
+        if (subscriberData==null)
+            subscriberData = DEFAULT_PATH;
         subscriberProperty = new Properties();
         subscriberProperty.load(new FileReader(subscriberData));
         homeUrl = subscriberProperty.getProperty("homeUrl");
@@ -42,8 +43,6 @@ public class DemoTests {
                 .addNewSubscriber()
                 .createSubscriber(subscriber)
                 .checkTheUserAfretAdding(subscriber.name);
-
-
     }
 
 

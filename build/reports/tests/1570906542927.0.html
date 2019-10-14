@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"><head>
+    <title>Subscribers</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/lib/bootstrap-4.0.0/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/lib/bootstrap-4.0.0/bootstrap.min.js"></script>
+    <script src="/js/lib/jquery/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/subscriber/subscribers.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Subscribers</h3>
+        </div>
+    </div>
+    <div class="row">
+        <a class="btn btn-link" href="/">Home</a>
+    </div>
+    <div class="row">
+        <div class="btn-group">
+            <div>
+                <input id="add" class="btn btn-success" type="button" value="add">
+                <input id="del" class="btn btn-danger" type="button" value="delete">
+                <form id="del-form" action="/subscriber/del" method="Post">
+                    <input id="id-list" name="idList" type="hidden">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <table class="table table-hover table-bordered table-striped" border="1" cellpadding="8" cellspacing="0">
+                <thead style="background-color: #dff0d8;">
+                <tr>
+                    <th></th>
+                    <th>id</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Возраст</th>
+                    <th>Пол</th>
+                </tr>
+                </thead>
+                <tbody><tr>
+                    <td>
+                        <input type="checkbox" id="1" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=1" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">1</a>
+                    </td>
+                    <td>Peter</td>
+                    <td>Pechking</td>
+                    <td>25</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="2" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=2" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">2</a>
+                    </td>
+                    <td>Helen</td>
+                    <td>Petruck</td>
+                    <td>23</td>
+                    <td>ж</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="3" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=3" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">3</a>
+                    </td>
+                    <td>TestName</td>
+                    <td>LastName</td>
+                    <td>25</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="101" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=101" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">101</a>
+                    </td>
+                    <td>Nikolas</td>
+                    <td>Paravosin</td>
+                    <td>55</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="106" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=106" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">106</a>
+                    </td>
+                    <td>Sergey</td>
+                    <td>Pushkaryov</td>
+                    <td>0</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="666" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=666" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">666</a>
+                    </td>
+                    <td>Santa</td>
+                    <td>Barbara</td>
+                    <td>25</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="667" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=667" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">667</a>
+                    </td>
+                    <td>test_firstName2</td>
+                    <td>test_lastName3</td>
+                    <td>18</td>
+                    <td>м</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="6667" name="selCheckBox">
+                    </td>
+                    <td>
+                        <a class="link" href="subscriber/edit?id=6667" name="contact-edit-id" id="contact-edit-id" title="Редактировать контакт">6667</a>
+                    </td>
+                    <td>"Konstantin"</td>
+                    <td>"Kondratiev"</td>
+                    <td>26</td>
+                    <td>м</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>
+
+</body></html>
