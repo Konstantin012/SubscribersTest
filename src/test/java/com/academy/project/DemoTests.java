@@ -18,7 +18,7 @@ public class DemoTests {
 
     private Properties subscriberProperty;
     private String homeUrl;
-    private static final String DEFAULT_PATH = "src/main/resources/subscriber.properties";
+    private static final String DEFAULT_PATH = "src/main/resources/propertDemo.properties";
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
