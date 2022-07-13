@@ -12,9 +12,11 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage {
     Actions actions = new Actions(driver);
 
-    private static final String test ="//a[normalize-space()=";
-    private WebElement phoneSamsung;
 
+    @FindBy(xpath = "//a[normalize-space()='Samsung galaxy s6']")
+    private WebElement phoneSamsung;
+    @FindBy(xpath = "//a[normalize-space()='HTC One M9']")
+    private WebElement phoneHtcOneM9;
 
 
 
@@ -30,13 +32,17 @@ public class HomePage extends BasePage {
     }
 
     public ProductPage selectPhone(String model){
-        var df = test+model;
-        phoneSamsung.findElement(By.xpath(test+model)).click();
+        if (model.contains("Samsung")){
+            phoneSamsung.click();
+        }
+        if (model.contains("HTC")){
+            phoneHtcOneM9.click();
+        }
         return new ProductPage(driver);
     }
 
     public CartPage goToCartPage(){
-        selectHomePage();
+        selectCartPage();
         return new CartPage(driver);
     }
 

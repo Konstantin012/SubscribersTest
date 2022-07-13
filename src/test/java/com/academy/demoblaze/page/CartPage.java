@@ -1,6 +1,7 @@
 package com.academy.demoblaze.page;
 
 import com.academy.framework.page.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +25,7 @@ public class CartPage extends BasePage{
     }
 
     public void DeleteAllItems(){
-        while (deleteButton.isDisplayed()){
+        while (tryFindElement(By.xpath("(//a[@href='#'][normalize-space()='Delete'])[1]"))){
             deleteButton.click();
         }
     }

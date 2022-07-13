@@ -43,6 +43,7 @@ public class DemoblazeTest extends BaseTest {
                 keepBuying().
                 goToCartPage();
         String totalPrice = cartPage.getTotalPrice();
+        System.out.println(totalPrice);
         cartPage.DeleteAllItems();
 
     }
