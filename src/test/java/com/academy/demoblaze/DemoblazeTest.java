@@ -1,4 +1,4 @@
-package com.academy.demoblaze.test;
+package com.academy.demoblaze;
 
 import com.academy.demoblaze.listener.TestListener;
 import com.academy.demoblaze.page.CartPage;
@@ -32,7 +32,7 @@ public class DemoblazeTest extends BaseTest {
     }
 
 
-    @Test(enabled = false, dataProvider = "demoblazeTestProvider")
+    @Test(enabled = true, dataProvider = "demoblazeTestProvider")
     public void testCase(String hTCOneM9, String samsungGalaxyS6) {
         CartPage cartPage = startFromHome(driver, homeUrl).
                 selectPhone(hTCOneM9).

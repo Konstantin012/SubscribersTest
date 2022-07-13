@@ -83,6 +83,10 @@
                                     <name>subscriber</name>
                                     <value>src/main/resources/subscriber.properties</value>
                                 </property>
+                                <property>
+                                    <name>browProp</name>
+                                    <value>src/main/resources/selenium.properties</value>
+                                </property>
                             </systemProperties>
                             <suiteXmlFiles>
                                 <suiteXmlFile>suites/testng.xml</suiteXmlFile>

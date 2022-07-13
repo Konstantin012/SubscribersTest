@@ -5,7 +5,7 @@
     <test name="demo">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.academy.demoblaze.test.DemoblazeTest" />
+            <class name="com.academy.demoblaze.DemoblazeTest" />
         </classes>
     </test>
 </suite>
